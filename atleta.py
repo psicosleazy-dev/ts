@@ -12,5 +12,7 @@ class Atleta:
             return 'juvenil'
         elif idade >= 20 and idade <= 34:
             return 'adulto'
+        elif idade >= 35:
+            return 'masters'
         else:
             return 'invalido'
