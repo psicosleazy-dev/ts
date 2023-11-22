@@ -20,13 +20,26 @@ livro3 = Livro("Dom Casmurro", "Machado de Assis", 1899)
 def adiciona_catalogo(catalogo,livro):
     catalogo.append(livro)
 
+def procura_livro(catalogo, livro_proc):
+    for livro in catalogo:
+        if livro.titulo == livro_proc.titulo and livro.autor == livro_proc.autor and livro.ano == livro_proc.ano:
+            livro.disponivel = False
+    return None
+
+
+def remove_catalogo(catalogo,livro_proc):
+    for livro in catalogo:
+        if livro.titulo == livro_proc == livro_proc.titulo and livro.autor == livro_proc.autor and livro.ano == livro_proc.ano:
+            return livro
+
 adiciona_catalogo(catalogo,livro1)
 adiciona_catalogo(catalogo,livro2)
 adiciona_catalogo(catalogo,livro3)
 
 print("Catálogo da Biblioteca: ")
 for livro in catalogo:
-    print(f"{livro.titulo} {livro.autor} ({livro.ano})")
+    if livro.disponivel:
+        print(f"{livro.titulo} {livro.autor} ({livro.ano})")
 
 '''def ligar(self):
         if not self.ligado:
